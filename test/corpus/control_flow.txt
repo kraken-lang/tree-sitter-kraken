@@ -1,0 +1,107 @@
+==================
+If statement
+==================
+
+fn test(x: int) -> int {
+    if x > 0 {
+        return 1;
+    } else {
+        return -1;
+    }
+}
+
+---
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameter_list
+      (parameter
+        name: (identifier)
+        type: (primitive_type)))
+    return_type: (primitive_type)
+    body: (block
+      (if_statement
+        condition: (binary_expression
+          left: (identifier)
+          right: (integer_literal))
+        consequence: (block
+          (return_statement
+            (integer_literal)))
+        alternative: (block
+          (return_statement
+            (unary_expression
+              (integer_literal))))))))
+
+==================
+While loop
+==================
+
+fn test() -> int {
+    let mut i = 0;
+    while i < 10 {
+        i = i + 1;
+    }
+    return i;
+}
+
+---
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameter_list)
+    return_type: (primitive_type)
+    body: (block
+      (let_statement
+        pattern: (identifier)
+        value: (integer_literal))
+      (while_statement
+        condition: (binary_expression
+          left: (identifier)
+          right: (integer_literal))
+        body: (block
+          (assignment_statement
+            left: (identifier)
+            right: (binary_expression
+              left: (identifier)
+              right: (integer_literal)))))
+      (return_statement
+        (identifier)))))
+
+==================
+Match expression
+==================
+
+fn test(x: int) -> string {
+    return match (x) {
+        0 -> "zero",
+        1 -> "one",
+        _ -> "other",
+    };
+}
+
+---
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameter_list
+      (parameter
+        name: (identifier)
+        type: (primitive_type)))
+    return_type: (primitive_type)
+    body: (block
+      (return_statement
+        (match_expression
+          value: (parenthesized_expression
+            (identifier))
+          (match_arm
+            pattern: (integer_literal)
+            value: (string_literal))
+          (match_arm
+            pattern: (integer_literal)
+            value: (string_literal))
+          (match_arm
+            pattern: (wildcard_pattern)
+            value: (string_literal)))))))

@@ -5,11 +5,11 @@
 
 Tree-sitter grammar for the Kraken programming language. Provides fast, incremental parsing for syntax highlighting, code navigation, and editor integration.
 
-Current version: `v0.8.42`
+**Version:** `v0.8.42` — This repo tracks the Kraken compiler version. Tags match compiler tags.
 
 ## Features
 
-This grammar supports all Kraken language features including:
+This grammar covers the core syntax of Kraken v0.8.42, including:
 
 - Function declarations with generics and type parameters
 - Struct and enum definitions with pattern matching
@@ -23,12 +23,21 @@ This grammar supports all Kraken language features including:
 - Range expressions and try operator
 - Turbofish syntax for explicit type arguments
 
+## Canonical Identifiers
+
+- **File extension:** `.kr`
+- **Language name:** `kraken`
+- **Scope:** `source.kraken`
+- **Tree-sitter language ID:** `kraken`
+
+All editor integrations should use these identifiers for consistency.
+
 ## Installation
 
 ### Node.js
 
 ```bash
-npm install tree-sitter-kraken
+npm install tree-sitter-kraken  # (publishing planned)
 ```
 
 ### Rust
@@ -37,7 +46,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-tree-sitter-kraken = "0.8.42"
+tree-sitter-kraken = "0.8.42"  # (publishing to crates.io planned)
 ```
 
 ## Usage
@@ -166,7 +175,9 @@ Tree-sitter provides incremental parsing, making it efficient for real-time edit
 
 ## Compatibility
 
-This grammar tracks the Kraken language compiler version. Version 0.8.42 supports all language features up to Kraken v0.8.42.
+This grammar tracks the Kraken language compiler version. Version 0.8.42 covers the syntax of Kraken v0.8.42. Gaps or edge cases are tracked in Issues.
+
+**Note:** Tree-sitter grammars focus on syntax structure, not full semantic validation. For complete language correctness, use the Kraken compiler.
 
 ## License
 

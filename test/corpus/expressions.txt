@@ -1,0 +1,76 @@
+==================
+Binary expressions
+==================
+
+fn test() -> int {
+    let x = 1 + 2 * 3;
+    return x;
+}
+
+---
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameter_list)
+    return_type: (primitive_type)
+    body: (block
+      (let_statement
+        pattern: (identifier)
+        value: (binary_expression
+          left: (integer_literal)
+          right: (binary_expression
+            left: (integer_literal)
+            right: (integer_literal))))
+      (return_statement
+        (identifier)))))
+
+==================
+String literals
+==================
+
+fn test() -> string {
+    let msg = "Hello, World!";
+    return msg;
+}
+
+---
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameter_list)
+    return_type: (primitive_type)
+    body: (block
+      (let_statement
+        pattern: (identifier)
+        value: (string_literal))
+      (return_statement
+        (identifier)))))
+
+==================
+Array expressions
+==================
+
+fn test() -> [int] {
+    let arr = [1, 2, 3];
+    return arr;
+}
+
+---
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameter_list)
+    return_type: (array_type
+      element_type: (primitive_type))
+    body: (block
+      (let_statement
+        pattern: (identifier)
+        value: (array_expression
+          (integer_literal)
+          (integer_literal)
+          (integer_literal)))
+      (return_statement
+        (identifier)))))

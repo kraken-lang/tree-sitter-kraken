@@ -1,0 +1,70 @@
+==================
+Simple function
+==================
+
+fn main() -> int {
+    return 0;
+}
+
+---
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameter_list)
+    return_type: (primitive_type)
+    body: (block
+      (return_statement
+        (integer_literal)))))
+
+==================
+Function with parameters
+==================
+
+fn add(x: int, y: int) -> int {
+    return x + y;
+}
+
+---
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameter_list
+      (parameter
+        name: (identifier)
+        type: (primitive_type))
+      (parameter
+        name: (identifier)
+        type: (primitive_type)))
+    return_type: (primitive_type)
+    body: (block
+      (return_statement
+        (binary_expression
+          left: (identifier)
+          right: (identifier))))))
+
+==================
+Generic function
+==================
+
+fn identity<T>(value: T) -> T {
+    return value;
+}
+
+---
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    type_parameters: (type_parameter_list
+      (type_parameter
+        name: (type_identifier)))
+    parameters: (parameter_list
+      (parameter
+        name: (identifier)
+        type: (type_identifier)))
+    return_type: (type_identifier)
+    body: (block
+      (return_statement
+        (identifier)))))

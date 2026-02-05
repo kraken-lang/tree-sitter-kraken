@@ -35,7 +35,3 @@ cc = "1.0"
 
 [package.metadata.docs.rs]
 default-target = "x86_64-unknown-linux-gnu"
-
-[[example]]
-name = "parse"
-path = "bindings/rust/examples/parse.rs"
