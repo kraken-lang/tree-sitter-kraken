@@ -1,0 +1,41 @@
+struct Point {
+    x: int;
+    y: int;
+}
+
+enum Option<T> {
+    Some(T),
+    None,
+}
+
+trait Display {
+    fn display(&self) -> string;
+}
+
+impl Display for Point {
+    fn display(&self) -> string {
+        return "Point";
+    }
+}
+
+fn main() -> int {
+    let point = Point { x: 10, y: 20 };
+    
+    let result = match (point.x) {
+        0..10 -> { 1 }
+        10..=20 -> { 2 }
+        _ -> { 0 }
+    };
+    
+    let closure = |x: int| -> int { x + 1 };
+    let value = closure(42);
+    
+    let range = 0..10;
+    for (i in range) {
+        if (i > 5) {
+            break;
+        }
+    }
+    
+    return 0;
+}

@@ -1,0 +1,41 @@
+#####################################################
+#  ▗▖ ▄▖          ▗▖             
+#  ▐▌▐▛           ▐▌             
+#  ▐▙█   █▟█▌ ▟██▖▐▌▟▛  ▟█▙ ▐▙██▖
+#  ▐██   █▘   ▘▄▟▌▐▙█  ▐▙▄▟▌▐▛ ▐▌
+#  ▐▌▐▙  █   ▗█▀▜▌▐▛█▖ ▐▛▀▀▘▐▌ ▐▌
+#  ▐▌ █▖ █   ▐▙▄█▌▐▌▝▙ ▝█▄▄▌▐▌ ▐▌
+#  ▝▘ ▝▘ ▀    ▀▀▝▘▝▘ ▀▘ ▝▀▀ ▝▘ ▝▘
+#
+#####################################################
+[package]
+#####################################################
+name = "tree-sitter-kraken"
+version = "0.8.42"
+description = "Tree-sitter grammar for the Kraken programming language"
+authors = ["James Gober <code@jamesgober.dev>"]
+license = "Apache-2.0"
+readme = "README.md"
+keywords = ["tree-sitter", "parser", "kraken", "incremental"]
+categories = ["parsing", "text-editors"]
+repository = "https://github.com/kraken-lang/tree-sitter-kraken"
+homepage = "https://github.com/kraken-lang/tree-sitter-kraken"
+edition = "2021"
+rust-version = "1.80"
+build = "bindings/rust/build.rs"
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter = "~0.22"
+
+[build-dependencies]
+cc = "1.0"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-unknown-linux-gnu"
+
+[[example]]
+name = "parse"
+path = "bindings/rust/examples/parse.rs"
