@@ -15,6 +15,6 @@ mod tests {
     #[test]
     fn test_can_load_grammar() {
         let language = language();
-        assert_eq!(language.node_kind_count(), 0);
+        assert_ne!(language.node_kind_count(), 0);
     }
 }
