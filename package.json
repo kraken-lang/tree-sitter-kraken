@@ -19,7 +19,7 @@
     "queries/*",
     "src/**"
   ],
-  "author": "James Gober <code@jamesgober.dev>",
+  "author": "James Gober <me@jamesgober.com>",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
