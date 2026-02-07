@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-kraken",
-  "version": "0.8.42",
+  "version": "0.9.2",
   "description": "Tree-sitter grammar for the Kraken programming language",
   "main": "bindings/node",
   "types": "bindings/node/index.d.ts",

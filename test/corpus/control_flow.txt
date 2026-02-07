@@ -31,7 +31,7 @@ fn test(x: int) -> int {
         alternative: (block
           (return_statement
             (unary_expression
-              (integer_literal))))))))
+              operand: (integer_literal))))))))
 
 ==================
 While loop
@@ -97,10 +97,12 @@ fn test(x: int) -> string {
           value: (parenthesized_expression
             (identifier))
           (match_arm
-            pattern: (integer_literal)
+            pattern: (literal_pattern
+              (integer_literal))
             value: (string_literal))
           (match_arm
-            pattern: (integer_literal)
+            pattern: (literal_pattern
+              (integer_literal))
             value: (string_literal))
           (match_arm
             pattern: (wildcard_pattern)

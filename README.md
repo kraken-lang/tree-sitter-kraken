@@ -5,23 +5,29 @@
 
 Tree-sitter grammar for the Kraken programming language. Provides fast, incremental parsing for syntax highlighting, code navigation, and editor integration.
 
-**Version:** `v0.8.42` — This repo tracks the Kraken compiler version. Tags match compiler tags.
+**Version:** `v0.9.2` — This repo tracks the Kraken language version. Tags match compiler tags.
 
 ## Features
 
-This grammar covers the core syntax of Kraken v0.8.42, including:
+This grammar covers the full syntax of Kraken v0.9.2, including:
 
-- Function declarations with generics and type parameters
-- Struct and enum definitions with pattern matching
-- Trait declarations and implementations
-- Closure expressions with capture semantics
-- Advanced pattern matching (tuples, structs, enums, ranges, guards)
-- Type system (primitives, generics, tuples, arrays, function types, pointers)
-- Control flow (if, while, for, match)
-- Operators (arithmetic, logical, bitwise, comparison)
+- Function declarations with generics, `pub`, `async`, `unsafe`, `const fn`, where clauses
+- Struct, enum, union, class, and interface declarations
+- Trait declarations and implementations with associated types
+- Closure expressions with move semantics
+- Advanced pattern matching (tuples, structs, enums, enum variants, ranges, guards, or-patterns)
+- Type system (primitives, generics, tuples, arrays, function types, pointers, references, trait objects, containers, slices)
+- Control flow (if, while, for, for-in, match, defer, break, continue)
+- Operators (arithmetic, logical, bitwise, comparison, compound assignment)
+- Module system (import, module declarations)
 - Unsafe blocks and raw pointers
 - Range expressions and try operator
+- Await and spawn expressions
+- Enum variant paths (`Enum::Variant`)
 - Turbofish syntax for explicit type arguments
+- Attributes (`#[repr(C)]`, etc.)
+- Hex, binary, and octal integer literals
+- Doc comments (`///`, `//!`)
 
 ## Canonical Identifiers
 
@@ -46,7 +52,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-tree-sitter-kraken = "0.8.42"  # (publishing to crates.io planned)
+tree-sitter-kraken = "0.9.2"  # (publishing to crates.io planned)
 ```
 
 ## Usage
@@ -175,7 +181,7 @@ Tree-sitter provides incremental parsing, making it efficient for real-time edit
 
 ## Compatibility
 
-This grammar tracks the Kraken language compiler version. Version 0.8.42 covers the syntax of Kraken v0.8.42. Gaps or edge cases are tracked in Issues.
+This grammar tracks the Kraken language version. Version 0.9.2 covers the full syntax of Kraken v0.9.2. Gaps or edge cases are tracked in Issues.
 
 **Note:** Tree-sitter grammars focus on syntax structure, not full semantic validation. For complete language correctness, use the Kraken compiler.
 
