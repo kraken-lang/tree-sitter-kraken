@@ -4,7 +4,8 @@ modcli/attic/
 modcli/tests_disabled/
 
 # Development
-/dev
+/dev/
+/.dev/
 
 # Private (not for GitHub)
 /.private/
